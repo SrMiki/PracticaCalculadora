@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="p_200">#83d4ef</color>
+    <color name="p_500">#16a9e3</color>
+    <color name="p_700">#0288c2</color>
+    <color name="s_200">#fc5d1f</color>
+    <color name="s_700">#e35016</color>
+    <color name="ligthgrey">#424242</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>

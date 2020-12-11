@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="btnVolver">Back</string>
+
+    <string name="app_name">PracticaCalculadora</string>
+
+
+    <string name="op1">Calculator</string>
+    <string name="op2">Recent</string>
+    <string name="op3">Exit</string>
+    <string name="op4">Information</string>
+
+
+    <string name="app_title">Calculator v1.4</string>
+
+    <string name="num1">Enter the 1st number</string>
+    <string name="num2">Enter the 2nd number</string>
+    <string name="result">The result is: 0</string>
+
+    <string name="info">Version 1.1 </string>
+</resources>

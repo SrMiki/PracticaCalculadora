@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">PracticaCalculadora</string>
+
+    <!-- NAVEGATION STRINGS -->
+    <string name="btnVolver">volver</string>
+
+
+    <!-- MAIN PAGE -->
+
+    <string name="op1">Calculadora</string>
+    <string name="op2">Historial</string>
+    <string name="op3">Salir</string>
+    <string name="op4">Informacion</string>
+
+
+    <string name="app_title">Calculadora v1.4</string>
+
+    <!-- CALCULADORA -->
+    <string name="num1">Introduzca el primer número</string>
+    <string name="num2">Introduzca el segundo número</string>
+    <string name="result">El resultado es: 0</string>
+
+
+    <!-- Informacion -->
+    <string name="info">Version 1.1 </string>
+    <string name="title_activity_navigation">NavigationActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+
+
+</resources>
