@@ -6,73 +6,57 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText CAMPO1, CAMPO2;
-    TextView resultado;
-    int num1, num2;
-    String fraseConts = "El resultado es: ";
+    EditText operationField;
+    TextView resultView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
 
-        CAMPO1 = findViewById(R.id.num1); // el R.id.num1 es el nº que se introduce, PERO ES UN TIPO
-        //EDITTEXT, par evitar confuciones lo he tratado como CAMPO aqui
-        CAMPO2 = findViewById(R.id.num2);
-        resultado = findViewById(R.id.resultado);
+        operationField = findViewById(R.id.operation); // editText
+        resultView = findViewById(R.id.result);
+
     }
 
     public void onClick(View view) {
-
-        try {
-            num1 = Integer.parseInt(CAMPO1.getText().toString());
-            num2 = Integer.parseInt(CAMPO2.getText().toString());
-        } catch ( Exception e){
-            num1 = 0;
-            num2 =0;
-            Toast.makeText(getApplicationContext(), "ha habido un error", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
         switch (view.getId()) {
-            case R.id.btnSumar:
-                sumar();
-                break;
-            case R.id.btnRestar:
-                restar();
-                break;
-            case R.id.btnProducto:
-                producto();
-                break;
-            case R.id.btnDividir:
-                dividir();
-                break;
+            case R.id.btn1: insertOperation("1"); break;
+            case R.id.btn2: insertOperation("2"); break;
+            case R.id.btn3: insertOperation("3"); break;
+            case R.id.btn4: insertOperation("4"); break;
+            case R.id.btn5: insertOperation("5"); break;
+            case R.id.btn6: insertOperation("6"); break;
+            case R.id.btn7: insertOperation("7"); break;
+            case R.id.btn8: insertOperation("8"); break;
+            case R.id.btn9: insertOperation("9"); break;
+            case R.id.btn0: insertOperation("0"); break;
 
+            case R.id.btnSumar: insertOperation("+"); break;
+            case R.id.btnRestar: insertOperation("-"); break;
+            case R.id.btnProducto: insertOperation("*"); break;
+            case R.id.btnDividir: insertOperation("/"); break;
+
+            //case R.id.btnNegative: insertOperation("0"); break;
+
+            case R.id.btnResult:
+
+                try{
+                    resultView.setText(Expresion.evaluate(operationField.getText().toString()) +"");
+                }  catch (ArithmeticException e){
+                    resultView.setText("Arithmetic Exception");
+                }
+                break;
         }
-
     }
 
-    private void dividir() {
-        if (num2 == 0) {
-            resultado.setText("¿Por qué quieres dividir por 0? ¿tienes algún problema?");
-        } else {
-            resultado.setText(fraseConts + (num1 / num2));
-        }
+    private void insertOperation(String newElement) {
+        operationField.setText(operationField.getText() + newElement);
     }
 
-    private void producto() {
-        resultado.setText(fraseConts + (num1 * num2));
-    }
-
-    private void restar() {
-        resultado.setText(fraseConts + (num1 - num2));
-    }
-
-    private void sumar() {
-        resultado.setText(fraseConts + (num1 + num2));
-    }
 }

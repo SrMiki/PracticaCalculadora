@@ -3,116 +3,37 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#7986CB">
+    android:orientation="vertical">
 
-    <!-- TITULO -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/app_title"
-        android:textSize="30sp"></TextView>
-
-    <!-- DIGITO -->
+    <!-- Operation -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="10dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
+        <EditText
+            android:id="@+id/operation"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textColor="@color/ligthgrey"/>
 
-        <EditText
-            android:id="@+id/num1"
+        <TextView
+            android:id="@+id/result"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@color/white"
-            android:hint="@string/num1"
-            android:inputType="none|numberDecimal"
-            android:paddingLeft="10dp"
-            android:textColor="@color/ligthgrey"
-            android:layout_marginBottom="20dp"></EditText>
-        <EditText
-            android:id="@+id/num2"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@color/white"
-            android:hint="@string/num2"
-            android:inputType="none|numberDecimal"
-            android:paddingLeft="10dp"
-            android:textColor="@color/ligthgrey"></EditText>
+            android:textColor="@color/ligthgrey"/>
 
     </LinearLayout>
 
-    <!-- PANEL NUMERICO -->
-
-    <GridLayout
-        android:layout_width="100dp"
-        android:layout_height="100dp">
-        
-    </GridLayout>
-
-
-
+    <!-- numbre panel -->
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:orientation="horizontal"
-        android:gravity="center"
-
-
-        >
-
-        <Button
-            android:id="@+id/btnSumar"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="10dp"
-            android:text="+"
-            android:textColor="@color/white"
-            android:onClick="onClick"></Button>
-        <Button
-            android:id="@+id/btnRestar"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:text="-"
-            android:layout_marginLeft="10dp"
-            android:textColor="@color/white"
-            android:onClick="onClick"></Button>
-        <Button
-            android:id="@+id/btnProducto"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:text="*"
-            android:layout_marginLeft="10dp"
-            android:textColor="@color/white"
-            android:onClick="onClick"></Button>
-        <Button
-            android:id="@+id/btnDividir"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:text="/"
-            android:layout_marginLeft="10dp"
-            android:textColor="@color/white"
-            android:onClick="onClick"></Button>
-
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center">
+        <include layout="@layout/layout_number_panel"/>
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/resultado"
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:text="@string/result"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"></TextView>
 
 </LinearLayout>
 
