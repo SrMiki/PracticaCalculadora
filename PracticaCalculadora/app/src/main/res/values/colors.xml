@@ -2,7 +2,7 @@
 <resources>
     <color name="p_200">#80CBC4</color>
     <color name="p_500">#B2EBF2</color>
-    <color name="p_700">#4DB6A3</color>
+    <color name="p_700">#4CAF50</color>
     <color name="s_200">#fc5d1f</color>
     <color name="s_700">#008688</color>
     <color name="ligthgrey">#424242</color>

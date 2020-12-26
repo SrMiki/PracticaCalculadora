@@ -4,15 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText operationField;
-    TextView resultView;
-
+    TextView operationField, resultView;
+    private static String operations = "+-/*%.";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,37 +25,89 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.btn1: insertOperation("1"); break;
-            case R.id.btn2: insertOperation("2"); break;
-            case R.id.btn3: insertOperation("3"); break;
-            case R.id.btn4: insertOperation("4"); break;
-            case R.id.btn5: insertOperation("5"); break;
-            case R.id.btn6: insertOperation("6"); break;
-            case R.id.btn7: insertOperation("7"); break;
-            case R.id.btn8: insertOperation("8"); break;
-            case R.id.btn9: insertOperation("9"); break;
-            case R.id.btn0: insertOperation("0"); break;
+            case R.id.btn1: insertNumber("1"); break;
+            case R.id.btn2: insertNumber("2"); break;
+            case R.id.btn3: insertNumber("3"); break;
+            case R.id.btn4: insertNumber("4"); break;
+            case R.id.btn5: insertNumber("5"); break;
+            case R.id.btn6: insertNumber("6"); break;
+            case R.id.btn7: insertNumber("7"); break;
+            case R.id.btn8: insertNumber("8"); break;
+            case R.id.btn9: insertNumber("9"); break;
+            case R.id.btn0: insertNumber("0"); break;
 
-            case R.id.btnSumar: insertOperation("+"); break;
-            case R.id.btnRestar: insertOperation("-"); break;
-            case R.id.btnProducto: insertOperation("*"); break;
-            case R.id.btnDividir: insertOperation("/"); break;
+            case R.id.btnAdd: insertOperator("+"); break;
+            case R.id.btnMinus: insertOperator("-"); break;
+            case R.id.btnProduct: insertOperator("*"); break;
+            case R.id.btnDivide: insertOperator("/"); break;
+            case R.id.btnPorcent: insertOperator("%"); break;
+            case R.id.btnDouble: insertOperator("."); break;
 
-            //case R.id.btnNegative: insertOperation("0"); break;
+            case R.id.btnClear: clearExpression(); break;
+            case R.id.btnRemove: removeOperator(); break;
+
+
+            case R.id.btnNegative: makeNegative(); break;
 
             case R.id.btnResult:
 
                 try{
-                    resultView.setText(Expresion.evaluate(operationField.getText().toString()) +"");
-                }  catch (ArithmeticException e){
-                    resultView.setText("Arithmetic Exception");
+                    resultView.setText(Expression.evaluate(operationField.getText().toString()) +"");
+
+                }  catch (ArithmeticException e ){
+                    System.out.println(e);
+                    Toast.makeText(getApplicationContext(),
+                            "Arithmetic exception", Toast.LENGTH_LONG).show();
+                    resultView.setText("");
+                } catch ( Exception e){
+                    System.out.println(e);
+                    Toast.makeText(getApplicationContext(),
+                            "Invalid format used", Toast.LENGTH_LONG).show();
+                    resultView.setText("");
                 }
                 break;
         }
     }
 
-    private void insertOperation(String newElement) {
-        operationField.setText(operationField.getText() + newElement);
+    private void removeOperator() {
+        String mathExp = operationField.getText().toString();
+        if(!mathExp.isEmpty()){
+            operationField.setText( mathExp.substring(0,mathExp.length()-1));
+        }
     }
+
+    /**
+     * Insert a new number
+     * @param number
+     */
+
+    private void insertNumber(String number) {
+        operationField.setText(operationField.getText() + number);
+    }
+
+    /**
+     * Insert a new operator (+,-, /, *, %)
+     * @param newOperator
+     * You can't put two operator in a row
+     */
+    private void insertOperator(String newOperator) {
+        String mathExp = operationField.getText().toString();
+        char lastOperator = mathExp.charAt(mathExp.length()-1);
+        if(! operations.contains(lastOperator+"")) {
+            operationField.setText( mathExp + newOperator);
+        } else {
+            operationField.setText( mathExp.substring(0,mathExp.length()-1) + newOperator);
+        }
+    }
+
+    private void makeNegative() {
+        operationField.setText( "-(" + operationField.getText() + ")");
+    }
+
+    private void clearExpression() {
+        operationField.setText("");
+        resultView.setText("");
+    }
+
 
 }

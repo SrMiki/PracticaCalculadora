@@ -1,62 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:clickable="false">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:shrinkColumns="*">
 
-    <TableRow android:padding="10dp">
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp">
+
+        <Button
+            android:id="@+id/btnClear"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/round_button"
+            android:onClick="onClick"
+            android:text="C"
+            app:backgroundTint="@color/s_200" />
 
 
+        <Button
+            android:id="@+id/btnPorcent"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/round_button"
+            android:onClick="onClick"
+            android:text="%"
+            style="@style/GreenText"/>
 
+        <Button
+            android:id="@+id/btnDivide"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/round_button"
+            android:onClick="onClick"
+            android:text="/"
+            style="@style/GreenText" />
+
+        <Button
+            android:id="@+id/btnRemove"
+            android:layout_marginLeft="10dp"
+            android:foreground="@android:drawable/ic_input_delete"
+            android:onClick="onClick"
+            />
 
     </TableRow>
 
 
-    <TableRow android:padding="10dp">
+    <TableRow android:paddingTop="10dp">
 
         <Button
             android:id="@+id/btn7"
             android:layout_marginLeft="10dp"
             android:background="@drawable/round_button"
             android:onClick="onClick"
-            android:text="7"
-            />
+            android:text="7" />
 
         <Button
             android:id="@+id/btn8"
             android:layout_marginLeft="10dp"
             android:background="@drawable/round_button"
             android:onClick="onClick"
-            android:text="8"
-             />
+            android:text="8" />
 
         <Button
             android:id="@+id/btn9"
             android:layout_marginLeft="10dp"
             android:background="@drawable/round_button"
             android:onClick="onClick"
-            android:text="9"
-            />
+            android:text="9" />
 
         <Button
-            android:id="@+id/btnProducto"
+            android:id="@+id/btnProduct"
             android:layout_marginLeft="10dp"
             android:background="@drawable/round_button"
             android:onClick="onClick"
-            android:text="*"
-            android:textColor="@color/s_700"
-            />
+            android:text="x"
+
+
+            style="@style/GreenText"/>
 
     </TableRow>
 
-    <TableRow android:padding="10dp">
+    <TableRow android:paddingTop="10dp">
 
         <Button
             android:id="@+id/btn4"
             android:layout_marginLeft="10dp"
             android:background="@drawable/round_button"
             android:onClick="onClick"
+
+
             android:text="4" />
 
         <Button
@@ -74,16 +107,15 @@
             android:text="6" />
 
         <Button
-            android:id="@+id/btnRestar"
+            android:id="@+id/btnMinus"
             android:layout_marginLeft="10dp"
             android:background="@drawable/round_button"
             android:onClick="onClick"
             android:text="-"
-            android:textColor="@color/s_700"
-             />
+            style="@style/GreenText"/>
     </TableRow>
 
-    <TableRow android:padding="10dp">
+    <TableRow android:paddingTop="10dp">
 
         <Button
             android:id="@+id/btn1"
@@ -107,24 +139,23 @@
             android:text="3" />
 
         <Button
-            android:id="@+id/btnSumar"
+            android:id="@+id/btnAdd"
             android:layout_marginLeft="10dp"
             android:background="@drawable/round_button"
             android:onClick="onClick"
             android:text="+"
-            android:textColor="@color/s_700"
-            />
+            style="@style/GreenText" />
 
     </TableRow>
 
-    <TableRow android:padding="10dp">
+    <TableRow android:paddingTop="10dp">
 
         <Button
             android:id="@+id/btnNegative"
             android:layout_marginLeft="10dp"
+            android:background="@drawable/round_button"
             android:onClick="onClick"
             android:text="+/-"
-            android:background="@drawable/round_button"
             android:textColor="@color/s_700"
 
             />
@@ -132,19 +163,17 @@
         <Button
             android:id="@+id/btn0"
             android:layout_marginLeft="10dp"
-            android:onClick="onClick"
-            android:text="0"
             android:background="@drawable/round_button"
-            />
+            android:onClick="onClick"
+            android:text="0" />
 
         <Button
-            android:id="@+id/btnDividir"
+            android:id="@+id/btnDouble"
             android:layout_marginLeft="10dp"
-            android:onClick="onClick"
-            android:text="/"
             android:background="@drawable/round_button"
-            android:textColor="@color/s_700"
-            />
+            android:onClick="onClick"
+            android:text="."
+            android:textColor="@color/s_700" />
 
         <Button
             android:id="@+id/btnResult"
@@ -153,9 +182,11 @@
             android:onClick="onClick"
 
             android:text="="
+            android:textColor="#FFF"
             app:backgroundTint="@color/p_700" />
 
 
     </TableRow>
+
 
 </TableLayout>
