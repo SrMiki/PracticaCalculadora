@@ -1,10 +1,8 @@
-Fecha: 2020-12-26
+Fecha: 2021-01-09
 
 ## Practica Calculadora 
 
-Mi primer proyecto de android
-
-Este proyecto es con el que he ido aprendiendo a programar en Android.
+Proyecto de aprendizaje de Android.
 
     - Lenguaje: java
     - Entorno: Android Studio
@@ -27,3 +25,8 @@ Se trata de una calculadora que permite introducir una expresión aritmética y 
     * Se van introduciendo dígitos y operaciones y al pulsar "=" se evalúa por enetero la expresión
 
 3º iteración 2020-12-26: actualización de la interfaz añadiendo formato a los botones y más funcionalidades. Ahora se admiten operaciones con decimales (Double) y las operaciones % (devuelve el resto de una división), . (para construir decimales), y C ("clear", restablece la expresión)
+
+
+## Comentarios
+
+- Java no tiene un "evaluador de expresiones" por lo que he desarrollado la clase "Expression" para poder resolver las operaciones. 
