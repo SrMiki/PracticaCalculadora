@@ -11,7 +11,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     TextView operationField, resultView;
-    private static String operations = "+-/*%.";
+    private static String operations = "+-/*%\\.";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,27 +46,27 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btnClear: clearExpression(); break;
             case R.id.btnRemove: removeOperator(); break;
 
+            case R.id.btnNegative:  resultView.setText("-" + resolvOperation()); break;
 
-            case R.id.btnNegative: makeNegative(); break;
+            case R.id.btnResult: resultView.setText(resolvOperation()); break;
 
-            case R.id.btnResult:
-
-                try{
-                    resultView.setText(Expression.evaluate(operationField.getText().toString()) +"");
-
-                }  catch (ArithmeticException e ){
-                    System.out.println(e);
-                    Toast.makeText(getApplicationContext(),
-                            "Arithmetic exception", Toast.LENGTH_LONG).show();
-                    resultView.setText("");
-                } catch ( Exception e){
-                    System.out.println(e);
-                    Toast.makeText(getApplicationContext(),
-                            "Invalid format used", Toast.LENGTH_LONG).show();
-                    resultView.setText("");
-                }
-                break;
         }
+    }
+
+    private String resolvOperation() {
+        try{
+            return Expression.evaluate(operationField.getText().toString()) +"";
+
+        }  catch (ArithmeticException e ){
+            System.out.println(e);
+            Toast.makeText(getApplicationContext(),
+                    "Arithmetic exception", Toast.LENGTH_LONG).show();
+        } catch ( Exception e){
+            System.out.println(e);
+            Toast.makeText(getApplicationContext(),
+                    "Invalid format used", Toast.LENGTH_LONG).show();
+        }
+        return"";
     }
 
     private void removeOperator() {
@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Insert a new operator (+,-, /, *, %)
+     * Insert a new operator (+,-, /, *, %,.)
      * @param newOperator
      * You can't put two operator in a row
      */
@@ -98,10 +98,6 @@ public class MainActivity extends AppCompatActivity {
         } else {
             operationField.setText( mathExp.substring(0,mathExp.length()-1) + newOperator);
         }
-    }
-
-    private void makeNegative() {
-        operationField.setText( "-(" + operationField.getText() + ")");
     }
 
     private void clearExpression() {

@@ -1,8 +1,8 @@
-package com.miki.practicacalculadora;
+    package com.miki.practicacalculadora;
 
 public class Expression {
 
-    private static char[] operations = {'+', '-', '*', '/', '%', 'n'};
+    private static char[] operations = {'+', '-', '*', '/', '%'};
 
     public static double evaluate(String exp) {
 
@@ -28,7 +28,6 @@ public class Expression {
         }
         return 0; //error ?
     }
-
 
     /**
      * get the index to make substring
