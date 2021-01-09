@@ -7,14 +7,12 @@ Proyecto de aprendizaje de Android.
     - Lenguaje: java
     - Entorno: Android Studio
 
-Se trata de una calculadora que permite introducir una expresión aritmética y evaluarla para devolver el resultado final en la misma pantalla.
+Se trata de una calculadora que permite introducir una expresión aritmética y evaluarla para devolver el resultado final en la misma pantalla.     
 
-3º iteración <en proceso>:  Objetivos:
-    * Permitir decimales[done]
-    * Añadir botón de "eliminar", "%"[done]
-    * Restablecer tras pulsar el botón "="[changed] >> añadido botón "C"
-    * Habilitar el botón "+/-" permitiendo introducir números negativos directamente [doing]
-        
+4º iteración <to do>:  Objetivos:
+    * Permitir utilizar el resultado de una operación como operador
+    * Añadir un "historial" de operaciones utilizando bases de datos
+    * Mejorar la interfaz añdiendo "themes" y "layouts"   
 
 ## Historial
 
@@ -24,7 +22,7 @@ Se trata de una calculadora que permite introducir una expresión aritmética y 
 2º iteración 2020-12-22: actualización de la interfaz utilizando TableLayout y TableRow. Modificación de la parte lógica permitiendo operaciones más complejas respetando la prioridad de operaciones
     * Se van introduciendo dígitos y operaciones y al pulsar "=" se evalúa por enetero la expresión
 
-3º iteración 2020-12-26: actualización de la interfaz añadiendo formato a los botones y más funcionalidades. Ahora se admiten operaciones con decimales (Double) y las operaciones % (devuelve el resto de una división), . (para construir decimales), y C ("clear", restablece la expresión)
+3º iteración 2021-01-09: actualización de la interfaz añadiendo formato a los botones y más funcionalidades. Ahora se admiten operaciones con decimales (Double) y las operaciones "%" (devuelve el resto de una división), "."(para construir decimales), "C" ("clear", restablece la expresión) y "+/-" que pasa a negativo el resultado obtenido.
 
 
 ## Comentarios
